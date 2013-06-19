@@ -13,7 +13,7 @@ $(boardSetup = function(){
 	$('#chances').text("You have " + chances + " chances left.");
 });
 
-$("form.guesses").submit(function() {
+$("form.guessBox").submit(function() {
 	letter = $("input:first").val().toLowerCase();
 	$('input[type="text"]').val('');
 
@@ -41,6 +41,7 @@ function validateGuess(letter){
 		alert("Please pick a letter from a-z");}
 	else {
 		guesses.push(letter);
+		$('#guesses').text(guesses.join(", "))
 		return true;
 	}
 };
